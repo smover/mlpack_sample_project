@@ -1,11 +1,11 @@
 # Partially taken from https://github.com/mlpack/models
 #
-project(LSTM)
+project(NNSAMPLE)
 cmake_minimum_required(VERSION 3.0)
 
 # The version number.
-set (LSTM_VERSION_MAJOR 1)
-set (LSTM_VERSION_MINOR 0)
+set (NNSAMPLE_VERSION_MAJOR 1)
+set (NNSAMPLE_VERSION_MINOR 0)
 
 option(FORCE_CXX11
     "Don't check that the compiler supports C++11, just assume it.  Make sure to specify any necessary flag to enable C++11 as part of CXXFLAGS."
@@ -40,9 +40,6 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include_directories(${PROJECT_BINARY_DIR}/src)
 
-# TODO:
-# add_subdirectory(src/learning)
-
 
 # Check for the mlpack library
 find_package (MLPACK REQUIRED)
@@ -69,9 +66,9 @@ message("Found ${MODELS_INCLUDE_DIRS}")
 
 
 # add the executable
-add_executable(lstm ${PROJECT_SOURCE_DIR}/src/main.cpp)
+add_executable(nnsample ${PROJECT_SOURCE_DIR}/src/main.cpp)
 # Set the libraries to link against
-target_link_libraries(lstm
+target_link_libraries(nnsample
   ${MLPACK_LIBRARIES}
   ${ARMADILLO_LIBRARIES})
 
