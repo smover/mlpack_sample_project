@@ -6,9 +6,17 @@
 You need to *install* [mlpack](https://www.mlpack.org) on your machine. We provide a script that install mlpack *on the virtual machine* that we provided. To install mlpack run the following commands in the terminal:
 
 ```
-$> wget
+$> wget https://raw.githubusercontent.com/smover/mlpack_sample_project/master/install_mlpack.bash
 $> bash install_mlpack.bash
 ```
+
+The installation will take *some time* (the compilation of mlpack takes time). CMake shows you a percentage of completion --- it should not take more than ~30 minutes.
+
+The script will ask you for the root password (e.g., to install the packages and libraries globally on your system).
+
+We are compiling also the Python binding: you can use them to be fast in learning how the library works, but the final project should be in C++ (this also includes the learning part of the model).
+
+The same script *should* work on your Ubuntu machine, but this is not guaranteed (different version, different dependencies). You can use the same script as a starting point to install mlpack for other Linux distributions.
 
 ## CMake project
 This repository sets up a minimal project using [CMake](https://cmake.org) and including mlpack.
