@@ -14,7 +14,7 @@ option(FORCE_CXX11
 # If we are not forcing C++11 support, check that the compiler supports C++11
 # and enable it.
 if (NOT FORCE_CXX11)
-  include(CMake/CXX11.cmake)
+  include(cmake/CXX11.cmake)
   check_for_cxx11_compiler(HAS_CXX11)
 
   if(NOT HAS_CXX11)
