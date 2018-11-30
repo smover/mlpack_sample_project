@@ -52,7 +52,7 @@ To run the sample code you also need the data to train and test the neural netwo
 ```
 $> cd build
 $> wget https://github.com/mlpack/models/raw/master/Kaggle/kaggle_train_test_dataset.zip
-$> tar xvzf kaggle_train_test_dataset.zip
+$> unzip kaggle_train_test_dataset.zip
 $> ./nnsample
 ```
 
