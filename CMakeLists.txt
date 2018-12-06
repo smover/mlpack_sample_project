@@ -67,6 +67,10 @@ include_directories(${MODELS_INCLUDE_DIRS})
 message("Found ${MODELS_INCLUDE_DIRS}")
 
 
+# enable testing
+enable_testing()
+add_subdirectory(test)
+
 # add the executable
 add_executable(nnsample ${PROJECT_SOURCE_DIR}/src/main.cpp)
 

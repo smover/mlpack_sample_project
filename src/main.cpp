@@ -250,7 +250,6 @@ int main () {
 
   submodule::MyClass myclass = submodule::MyClass();
   myclass.flip();
-                               
 
   return 0;
 }
