@@ -14,6 +14,8 @@
 #include <mlpack/methods/ann/ffn.hpp>
 #include <mlpack/prereqs.hpp>
 
+#include "submodule/submodule.hpp"
+
 using namespace mlpack;
 using namespace mlpack::ann;
 using namespace mlpack::optimization;
@@ -245,6 +247,9 @@ int main () {
     << "https://www.kaggle.com/c/digit-recognizer/submissions for a competition"
     << endl;
   cout << "Finished" << endl;
+
+  submodule::MyClass myclass = submodule::MyClass();
+  myclass.flip();
 
   return 0;
 }

@@ -40,6 +40,8 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include_directories(${PROJECT_BINARY_DIR}/src)
 
+# Tell CMake to look for the CMakeList in the modules
+add_subdirectory(${PROJECT_SOURCE_DIR}/src/submodule)
 
 # Check for the mlpack library
 find_package (MLPACK REQUIRED)
@@ -65,10 +67,16 @@ include_directories(${MODELS_INCLUDE_DIRS})
 message("Found ${MODELS_INCLUDE_DIRS}")
 
 
+# enable testing
+enable_testing()
+add_subdirectory(test)
+
 # add the executable
 add_executable(nnsample ${PROJECT_SOURCE_DIR}/src/main.cpp)
-# Set the libraries to link against
+
+# Link the libraries
 target_link_libraries(nnsample
   ${MLPACK_LIBRARIES}
-  ${ARMADILLO_LIBRARIES})
+  ${ARMADILLO_LIBRARIES}
+  submodule)
 
